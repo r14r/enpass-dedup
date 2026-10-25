@@ -23,7 +23,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urlparse
 
-VERSION = "1.2.0"
+VERSION = "1.2.1"
 PLAN_VERSION = 1
 VOLATILE_KEYS = {
     "uuid", "id", "created_at", "updated_at", "last_used", "last_used_at",
