@@ -1,0 +1,17 @@
+# Sensitive Enpass exports and reports: never commit real credential data
+*.json
+!example_synthetic.json
+*.csv
+*.enpassbackup
+*.enpass
+*.db
+*.sqlite*
+*.zip
+*.log
+.env
+.env.*
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.DS_Store
