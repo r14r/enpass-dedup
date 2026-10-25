@@ -1,0 +1,8 @@
+{
+  "items": [
+    {"uuid":"demo-1","title":"Demo Shop","category":"login","updated_at":1710000000,"note":"","fields":[{"type":"url","value":"https://demo.invalid"},{"type":"username","value":"demo@example.invalid"},{"type":"password","value":"EXAMPLE-NOT-REAL"}]},
+    {"uuid":"demo-2","title":"Demo Shop","category":"login","updated_at":1720000000,"note":"","fields":[{"type":"url","value":"https://demo.invalid"},{"type":"username","value":"demo@example.invalid"},{"type":"password","value":"EXAMPLE-NOT-REAL"}]},
+    {"uuid":"demo-3","title":"Demo Shop","category":"login","updated_at":1730000000,"note":"Example note","fields":[{"type":"url","value":"https://demo.invalid"},{"type":"username","value":"demo@example.invalid"},{"type":"password","value":"EXAMPLE-NOT-REAL"}]},
+    {"uuid":"demo-4","title":"Demo Shop","category":"login","updated_at":1740000000,"note":"New password","fields":[{"type":"url","value":"https://demo.invalid"},{"type":"username","value":"demo@example.invalid"},{"type":"password","value":"DIFFERENT-NOT-REAL"}]}
+  ]
+}
