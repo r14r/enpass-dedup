@@ -184,7 +184,7 @@ with overview_tab:
              "Einträge": len(group.indices),
              "Indices": ", ".join(str(i) for i in group.indices[:12])}
             for n, group in enumerate(groups, 1)
-        ], hide_index=True, use_container_width=True)
+        ], hide_index=True, width="stretch")
     else:
         st.success("Keine Duplikat-Kandidaten mit den gewählten Einstellungen erkannt.")
 
@@ -222,7 +222,7 @@ with review_tab:
             st.selectbox("Diesen Eintrag behalten", list(group.indices), key=kkey,
                          format_func=lambda i: f"#{i} · {str(items[i].get('title') or '(Ohne Titel)')[:60]} · {str(items[i].get('updated_at') or 'ohne Datum')[:16]}")
             st.dataframe(item_rows(group, items, st.session_state[kkey], show_usernames),
-                         hide_index=True, use_container_width=True)
+                         hide_index=True, width="stretch")
             st.checkbox("Andere Einträge dieser Gruppe für Entfernung vormerken", key=akey,
                         help="Wird nichts ausgewählt, bleiben sämtliche Einträge unverändert.")
     st.caption("Gruppen können sich überlappen. Wähle für überschneidende manuelle Gruppen nur eine; exakte Teilgruppen werden automatisch ausgenommen.")
@@ -246,20 +246,20 @@ with export_tab:
         d1, d2 = st.columns(2)
         with d1:
             st.download_button("📄 Prüfbericht als CSV", data=csv_bytes,
-                               file_name="enpass-review.csv", mime="text/csv", use_container_width=True)
+                               file_name="enpass-review.csv", mime="text/csv", width="stretch")
         with d2:
             st.download_button("📝 Bereinigungsplan als JSON", data=plan_bytes,
-                               file_name="enpass-plan.json", mime="application/json", use_container_width=True)
+                               file_name="enpass-plan.json", mime="application/json", width="stretch")
         if removed and accepted and accepted_manual:
             try:
                 clean_bytes = export_clean_json(document, raw, plan)
                 st.success(f"Validierung erfolgreich: {len(items) - removed} unveränderte Einträge, Export-Metadaten erhalten.")
                 st.download_button("⬇️ Geprüften bereinigten JSON-Export herunterladen",
                                    data=clean_bytes, file_name="enpass-cleaned.json",
-                                   mime="application/json", type="primary", use_container_width=True)
+                                   mime="application/json", type="primary", width="stretch")
             except (UserError, ValueError, TypeError) as exc:
                 st.error(f"Validierung fehlgeschlagen: {exc}")
         else:
-            st.button("⬇️ Bereinigten Export herunterladen", disabled=True, use_container_width=True,
+            st.button("⬇️ Bereinigten Export herunterladen", disabled=True, width="stretch",
                       help="Benötigt mindestens eine Auswahl sowie die Sicherheitsbestätigung(en).")
         st.caption("Berichte enthalten Titel und optional Benutzernamen, aber keine Passwörter oder TOTP-Werte. CSV/Plan/Export werden ausschließlich im Speicher erzeugt.")
