@@ -12,6 +12,11 @@ bootstrap:
 web:
     .venv/bin/python -m streamlit run app.py --server.address=127.0.0.1 --server.port=8501
 
+open:
+    python3 -m webbrowser -t http://127.0.0.1:8501
+
+open-local: open
+
 ci:
     python3 -m compileall -q app.py web_core.py enpass_dedupe.py
     python3 -m unittest discover -s . -p 'test_*.py' -v

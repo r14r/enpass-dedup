@@ -19,6 +19,8 @@ Requirements: Python 3.10+ and Streamlit (CLI works using the standard library a
 # Alternatively, with just:
  just bootstrap
  just web
+ # In a second terminal:
+ just open
 ```
 
 Open **http://127.0.0.1:8501** in your browser. The included `.streamlit/config.toml` binds to localhost and disables Streamlit usage telemetry. Do not expose this server to the Internet or run it on a shared server: exported JSON contains plaintext credentials.
